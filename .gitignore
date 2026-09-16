@@ -1,0 +1,6 @@
+.env
+.amo-upload-uuid
+web-ext-artifacts/
+.DS_Store
+node_modules/
+dist/

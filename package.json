@@ -1,0 +1,12 @@
+{
+  "name": "bye-tab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

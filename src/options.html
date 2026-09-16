@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bye Tab settings</title>
+    <style>
+      body {
+        margin: 0 auto;
+        padding: 32px 24px 64px;
+        max-width: 620px;
+        font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+        color: #1c1c22;
+      }
+      h1 { font-size: 20px; margin: 0 0 4px; }
+      h2 { font-size: 14px; margin: 28px 0 8px; }
+      p.hint { color: #666; margin: 0 0 16px; }
+      code { background: #f0f0f3; padding: 1px 5px; border-radius: 4px; }
+      .row { display: flex; gap: 8px; margin-bottom: 8px; }
+      .row input[type="text"] { flex: 1; }
+      input[type="text"], input[type="number"] {
+        padding: 7px 9px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font: inherit;
+      }
+      input[type="number"] { width: 72px; }
+      button {
+        padding: 7px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fff;
+        font: inherit;
+        cursor: pointer;
+      }
+      button:hover { background: #f4f4f6; }
+      label.check { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+      #status {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        padding: 6px 12px;
+        border-radius: 6px;
+        background: #1c1c22;
+        color: #fff;
+        opacity: 0;
+        transition: opacity 150ms;
+        pointer-events: none;
+      }
+      #status.visible { opacity: 1; }
+      #status.error { background: #b3261e; }
+      #transferStatus { color: #666; min-height: 21px; }
+      #testResult { font-weight: 600; }
+      #testResult.no { color: #999; font-weight: 400; }
+      ul.examples { color: #666; padding-left: 20px; margin: 0 0 16px; }
+    </style>
+  </head>
+  <body>
+    <h1>Bye Tab</h1>
+    <p class="hint">Tabs matching a pattern below get a countdown in the corner, then close on their own. Changes save automatically.</p>
+
+    <label class="check">
+      <input type="checkbox" id="enabled" />
+      Enabled
+    </label>
+    <label class="check">
+      <input type="checkbox" id="pauseWhenHidden" />
+      Only count down while the tab is visible
+    </label>
+    <label class="check">
+      Close after
+      <input type="number" id="seconds" min="1" max="120" step="1" />
+      seconds
+    </label>
+
+    <h2>URL patterns</h2>
+    <p class="hint">
+      <code>*</code> matches any characters. The whole URL has to match. A pattern
+      without <code>://</code> matches any scheme.
+    </p>
+    <ul class="examples">
+      <li><code>example.com/*</code>: every page on example.com</li>
+      <li><code>*://*.example.com/*</code>: plus its subdomains</li>
+      <li><code>*/logout*</code>: any logout URL on any site</li>
+    </ul>
+    <div id="patterns"></div>
+    <button type="button" id="add">Add pattern</button>
+
+    <h2>Test a URL</h2>
+    <div class="row">
+      <input type="text" id="testUrl" placeholder="https://example.com/some/page" />
+    </div>
+    <div id="testResult" class="no">Type a URL to check it against the patterns above.</div>
+
+    <h2>Import and export</h2>
+    <p class="hint">
+      Copy your patterns as a comma-separated list, or paste a list to add to the ones
+      you already have.
+    </p>
+    <div class="row">
+      <input type="text" id="importText" placeholder="example.com/*, */logout*" />
+      <button type="button" id="import">Import</button>
+      <button type="button" id="export">Copy all</button>
+    </div>
+    <div id="transferStatus" role="status"></div>
+
+    <div id="status" role="status">Saved</div>
+
+    <script src="match.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

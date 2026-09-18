@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Bye Tab",
   "version": "1.0.0",
-  "description": "Automatically closes tabs whose URL matches your patterns, after a short countdown you can cancel.",
+  "description": "Automatically closes tabs whose URL matches given patterns.",
   "permissions": [
     "storage"
   ],

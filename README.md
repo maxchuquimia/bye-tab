@@ -9,9 +9,11 @@
 </p>
 
 <p align="center">
-  <a href="https://chromewebstore.google.com/detail/bye-tab/EXTENSION_ID">Chrome Web Store</a>
+  <a href="https://chromewebstore.google.com/detail/bye-tab/ofndllmnjleibiiflmjejgnomdbfbbpg">Chrome Web Store</a>
   ·
-  <a href="https://addons.mozilla.org/firefox/addon/bye-tab/">Firefox Add-ons</a>
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/bye-tab/">Firefox Add-ons</a>
+  ·
+  Safari (coming soon)
 </p>
 
 ![Countdown card in the corner of a page](screenshots/countdown.png)
@@ -26,8 +28,9 @@ fills over a few seconds. Once it's full, the tab closes. To stay on the page, c
 
 ## Install
 
-- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/bye-tab/EXTENSION_ID)
-- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/bye-tab/)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/bye-tab/ofndllmnjleibiiflmjejgnomdbfbbpg)
+- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/bye-tab/)
+- **Safari**: coming soon
 
 ## Settings
 

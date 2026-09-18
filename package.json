@@ -2,6 +2,7 @@
   "name": "bye-tab",
   "private": true,
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "build": "node scripts/build.mjs",
     "screenshots": "node scripts/screenshots.mjs"
